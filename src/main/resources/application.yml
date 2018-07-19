@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      httpclient:
+        ssl:
+          use-insecure-trust-manager: true
+      routes:
+      - id: rest_path
+        uri: http://localhost:8080
+        predicates:
+        - Path=/rest/**
+
+server:
+  port: 9000
+  error:
+    whitelabel:
+      enabled: false
